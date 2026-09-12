@@ -4,31 +4,20 @@ class Solution {
             return s;
         }
 
-        StringBuilder[] rows = new StringBuilder[numRows];
+        StringBuilder result = new StringBuilder(s.length());
+        int cycle = 2 * numRows - 2;
 
-        for (int i = 0; i < numRows; i++) {
-            rows[i] = new StringBuilder();
-        }
+        for (int row = 0; row < numRows; row++) {
+            for (int i = row; i < s.length(); i += cycle) {
+                result.append(s.charAt(i));
 
-        int row = 0;
-        boolean goingDown = true;
+                int diagonal = i + cycle - 2 * row;
 
-        for (char ch : s.toCharArray()) {
-            rows[row].append(ch);
-
-            if (row == 0) {
-                goingDown = true;
-            } else if (row == numRows - 1) {
-                goingDown = false;
+                if (row != 0 && row != numRows - 1
+                        && diagonal < s.length()) {
+                    result.append(s.charAt(diagonal));
+                }
             }
-
-            row += goingDown ? 1 : -1;
-        }
-
-        StringBuilder result = new StringBuilder();
-
-        for (StringBuilder r : rows) {
-            result.append(r);
         }
 
         return result.toString();
