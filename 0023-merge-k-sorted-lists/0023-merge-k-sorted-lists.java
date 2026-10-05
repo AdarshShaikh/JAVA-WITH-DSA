@@ -14,33 +14,41 @@ if (lists == null || lists.length == 0) {
             return null;
         }
 
-        PriorityQueue<ListNode> pq = new PriorityQueue<>(
-            (a, b) -> Integer.compare(a.val, b.val)
-        );
+        int interval = 1;
 
-        // Add the first node of every non-empty list
-        for (ListNode node : lists) {
-            if (node != null) {
-                pq.offer(node);
+        while (interval < lists.length) {
+
+            for (int i = 0; i + interval < lists.length; i += interval * 2) {
+                lists[i] = mergeTwoLists(lists[i], lists[i + interval]);
             }
+
+            interval *= 2;
         }
+
+        return lists[0];
+    }
+
+    private ListNode mergeTwoLists(ListNode a, ListNode b) {
 
         ListNode dummy = new ListNode(0);
         ListNode current = dummy;
 
-        while (!pq.isEmpty()) {
+        while (a != null && b != null) {
 
-            ListNode node = pq.poll();
-
-            current.next = node;
-            current = current.next;
-
-            // Add the next node from the same list
-            if (node.next != null) {
-                pq.offer(node.next);
+            if (a.val <= b.val) {
+                current.next = a;
+                a = a.next;
+            } else {
+                current.next = b;
+                b = b.next;
             }
+
+            current = current.next;
         }
 
+        current.next = (a != null) ? a : b;
+
         return dummy.next;
+
     }
 }
