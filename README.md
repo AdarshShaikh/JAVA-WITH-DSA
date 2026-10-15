@@ -36,6 +36,7 @@
 | [0013-roman-to-integer](https://github.com/AdarshShaikh/JAVA-WITH-DSA/tree/master/0013-roman-to-integer) |
 | [0017-letter-combinations-of-a-phone-number](https://github.com/AdarshShaikh/JAVA-WITH-DSA/tree/master/0017-letter-combinations-of-a-phone-number) |
 | [0030-substring-with-concatenation-of-all-words](https://github.com/AdarshShaikh/JAVA-WITH-DSA/tree/master/0030-substring-with-concatenation-of-all-words) |
+| [0036-valid-sudoku](https://github.com/AdarshShaikh/JAVA-WITH-DSA/tree/master/0036-valid-sudoku) |
 ## String
 |  |
 | ------- |
@@ -74,6 +75,7 @@
 | [0033-search-in-rotated-sorted-array](https://github.com/AdarshShaikh/JAVA-WITH-DSA/tree/master/0033-search-in-rotated-sorted-array) |
 | [0034-find-first-and-last-position-of-element-in-sorted-array](https://github.com/AdarshShaikh/JAVA-WITH-DSA/tree/master/0034-find-first-and-last-position-of-element-in-sorted-array) |
 | [0035-search-insert-position](https://github.com/AdarshShaikh/JAVA-WITH-DSA/tree/master/0035-search-insert-position) |
+| [0036-valid-sudoku](https://github.com/AdarshShaikh/JAVA-WITH-DSA/tree/master/0036-valid-sudoku) |
 ## Binary Search
 |  |
 | ------- |
@@ -172,4 +174,8 @@
 |  |
 | ------- |
 | [0029-divide-two-integers](https://github.com/AdarshShaikh/JAVA-WITH-DSA/tree/master/0029-divide-two-integers) |
+## Matrix
+|  |
+| ------- |
+| [0036-valid-sudoku](https://github.com/AdarshShaikh/JAVA-WITH-DSA/tree/master/0036-valid-sudoku) |
 <!---LeetCode Topics End-->
