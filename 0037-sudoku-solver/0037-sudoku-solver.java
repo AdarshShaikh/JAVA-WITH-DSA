@@ -1,56 +1,82 @@
 
 class Solution {
+    private final int[] rows = new int[9];
+    private final int[] cols = new int[9];
+    private final int[] boxes = new int[9];
+    private final int FULL = (1 << 9) - 1;
+
     public void solveSudoku(char[][] board) {
-        solve(board);
-    }
+        // Initialize bit masks
+        for (int r = 0; r < 9; r++) {
+            for (int c = 0; c < 9; c++) {
+                if (board[r][c] != '.') {
+                    int bit = 1 << (board[r][c] - '1');
+                    int b = (r / 3) * 3 + c / 3;
 
-    private boolean solve(char[][] board) {
-        for (int row = 0; row < 9; row++) {
-            for (int col = 0; col < 9; col++) {
-
-                if (board[row][col] == '.') {
-                    for (char num = '1'; num <= '9'; num++) {
-
-                        if (isValid(board, row, col, num)) {
-                            board[row][col] = num;
-
-                            if (solve(board)) {
-                                return true;
-                            }
-
-                            // Backtrack
-                            board[row][col] = '.';
-                        }
-                    }
-
-                    // No valid digit found
-                    return false;
+                    rows[r] |= bit;
+                    cols[c] |= bit;
+                    boxes[b] |= bit;
                 }
             }
         }
 
-        // All cells are filled
-        return true;
+        solve(board);
     }
 
-    private boolean isValid(char[][] board, int row, int col, char num) {
+    private boolean solve(char[][] board) {
+        int bestR = -1, bestC = -1;
+        int minCount = 10;
+        int candidates = 0;
 
-        for (int i = 0; i < 9; i++) {
-            // Check row and column
-            if (board[row][i] == num ||
-                board[i][col] == num) {
-                return false;
+        // Choose the empty cell with the fewest candidates
+        for (int r = 0; r < 9; r++) {
+            for (int c = 0; c < 9; c++) {
+                if (board[r][c] != '.') continue;
+
+                int b = (r / 3) * 3 + c / 3;
+                int mask = FULL & ~(rows[r] | cols[c] | boxes[b]);
+                int count = Integer.bitCount(mask);
+
+                if (count == 0) return false;
+
+                if (count < minCount) {
+                    minCount = count;
+                    bestR = r;
+                    bestC = c;
+                    candidates = mask;
+
+                    if (count == 1) break;
+                }
             }
-
-            // Check 3x3 sub-box
-            int boxRow = 3 * (row / 3) + i / 3;
-            int boxCol = 3 * (col / 3) + i % 3;
-
-            if (board[boxRow][boxCol] == num) {
-                return false;
-            }
+            if (minCount == 1) break;
         }
 
-        return true;
+        // No empty cells remain
+        if (bestR == -1) return true;
+
+        int b = (bestR / 3) * 3 + bestC / 3;
+        int mask = candidates;
+
+        while (mask != 0) {
+            int bit = mask & -mask;
+            mask -= bit;
+
+            int digit = Integer.numberOfTrailingZeros(bit);
+            board[bestR][bestC] = (char) ('1' + digit);
+
+            rows[bestR] |= bit;
+            cols[bestC] |= bit;
+            boxes[b] |= bit;
+
+            if (solve(board)) return true;
+
+            // Undo the choice
+            rows[bestR] ^= bit;
+            cols[bestC] ^= bit;
+            boxes[b] ^= bit;
+            board[bestR][bestC] = '.';
+        }
+
+        return false;
     }
 }
