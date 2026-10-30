@@ -1,32 +1,38 @@
 import java.util.*;
 
 class Solution {
+    List<List<Integer>> ans = new ArrayList<>();
+    int[] candidates;
+    int[] path = new int[40];
+    int size;
+
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
-        List<List<Integer>> result = new ArrayList<>();
         Arrays.sort(candidates);
+        this.candidates = candidates;
 
-        backtrack(candidates, target, 0, new ArrayList<>(), result);
+        dfs(0, target);
 
-        return result;
+        return ans;
     }
 
-    private void backtrack(int[] candidates, int target, int start,
-                           List<Integer> path, List<List<Integer>> result) {
-
-        if (target == 0) {
-            result.add(new ArrayList<>(path));
+    private void dfs(int start, int remaining) {
+        if (remaining == 0) {
+            List<Integer> list = new ArrayList<>(size);
+            for (int i = 0; i < size; i++) {
+                list.add(path[i]);
+            }
+            ans.add(list);
             return;
         }
 
         for (int i = start; i < candidates.length; i++) {
+            int num = candidates[i];
 
-            if (candidates[i] > target) break;
+            if (num > remaining) break;
 
-            path.add(candidates[i]);
-
-            backtrack(candidates, target - candidates[i], i, path, result);
-
-            path.remove(path.size() - 1);
+            path[size++] = num;
+            dfs(i, remaining - num);
+            size--;
         }
     }
 }
