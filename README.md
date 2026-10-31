@@ -38,6 +38,7 @@
 | [0030-substring-with-concatenation-of-all-words](https://github.com/AdarshShaikh/JAVA-WITH-DSA/tree/master/0030-substring-with-concatenation-of-all-words) |
 | [0036-valid-sudoku](https://github.com/AdarshShaikh/JAVA-WITH-DSA/tree/master/0036-valid-sudoku) |
 | [0037-sudoku-solver](https://github.com/AdarshShaikh/JAVA-WITH-DSA/tree/master/0037-sudoku-solver) |
+| [0041-first-missing-positive](https://github.com/AdarshShaikh/JAVA-WITH-DSA/tree/master/0041-first-missing-positive) |
 ## String
 |  |
 | ------- |
@@ -81,6 +82,7 @@
 | [0037-sudoku-solver](https://github.com/AdarshShaikh/JAVA-WITH-DSA/tree/master/0037-sudoku-solver) |
 | [0039-combination-sum](https://github.com/AdarshShaikh/JAVA-WITH-DSA/tree/master/0039-combination-sum) |
 | [0040-combination-sum-ii](https://github.com/AdarshShaikh/JAVA-WITH-DSA/tree/master/0040-combination-sum-ii) |
+| [0041-first-missing-positive](https://github.com/AdarshShaikh/JAVA-WITH-DSA/tree/master/0041-first-missing-positive) |
 ## Binary Search
 |  |
 | ------- |
