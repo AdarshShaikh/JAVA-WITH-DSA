@@ -19,6 +19,7 @@
 | [0012-integer-to-roman](https://github.com/AdarshShaikh/JAVA-WITH-DSA/tree/master/0012-integer-to-roman) |
 | [0013-roman-to-integer](https://github.com/AdarshShaikh/JAVA-WITH-DSA/tree/master/0013-roman-to-integer) |
 | [0029-divide-two-integers](https://github.com/AdarshShaikh/JAVA-WITH-DSA/tree/master/0029-divide-two-integers) |
+| [0043-multiply-strings](https://github.com/AdarshShaikh/JAVA-WITH-DSA/tree/master/0043-multiply-strings) |
 ## Recursion
 |  |
 | ------- |
@@ -57,6 +58,7 @@
 | [0030-substring-with-concatenation-of-all-words](https://github.com/AdarshShaikh/JAVA-WITH-DSA/tree/master/0030-substring-with-concatenation-of-all-words) |
 | [0032-longest-valid-parentheses](https://github.com/AdarshShaikh/JAVA-WITH-DSA/tree/master/0032-longest-valid-parentheses) |
 | [0038-count-and-say](https://github.com/AdarshShaikh/JAVA-WITH-DSA/tree/master/0038-count-and-say) |
+| [0043-multiply-strings](https://github.com/AdarshShaikh/JAVA-WITH-DSA/tree/master/0043-multiply-strings) |
 ## Sliding Window
 |  |
 | ------- |
@@ -205,4 +207,8 @@
 |  |
 | ------- |
 | [0042-trapping-rain-water](https://github.com/AdarshShaikh/JAVA-WITH-DSA/tree/master/0042-trapping-rain-water) |
+## Simulation
+|  |
+| ------- |
+| [0043-multiply-strings](https://github.com/AdarshShaikh/JAVA-WITH-DSA/tree/master/0043-multiply-strings) |
 <!---LeetCode Topics End-->
