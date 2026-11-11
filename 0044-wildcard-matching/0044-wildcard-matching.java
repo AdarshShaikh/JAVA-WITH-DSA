@@ -1,32 +1,26 @@
 class Solution {
     public boolean isMatch(String s, String p) {
-        int i = 0, j = 0;
-        int star = -1, match = 0;
-
-        int m = s.length(), n = p.length();
-
-        while (i < m) {
-            if (j < n && (p.charAt(j) == '?' || p.charAt(j) == s.charAt(i))) {
-                i++;
-                j++;
-            }
-            else if (j < n && p.charAt(j) == '*') {
-                star = j++;
-                match = i;
-            }
-            else if (star != -1) {
-                j = star + 1;
-                i = ++match;
-            }
-            else {
+        int si = 0, pi = 0, match = 0, star = -1;
+        int sn = s.length(), pn = p.length();
+        while (si < sn) {
+            if (pi < pn && (p.charAt(pi) == '?' || p.charAt(pi) == s.charAt(si))) {
+                si++;
+                pi++;
+            } else if (pi < pn && p.charAt(pi) == '*') {
+                star = pi;
+                match = si;
+                pi++;
+            } else if (star != -1) {
+                pi = star + 1;
+                match++;
+                si = match;
+            } else {
                 return false;
             }
         }
-
-        while (j < n && p.charAt(j) == '*') {
-            j++;
+        while (pi < pn && p.charAt(pi) == '*') {
+            pi++;
         }
-
-        return j == n;
+        return pi == pn;
     }
 }
