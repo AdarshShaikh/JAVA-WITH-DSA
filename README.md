@@ -153,6 +153,7 @@
 | [0037-sudoku-solver](https://github.com/AdarshShaikh/JAVA-WITH-DSA/tree/master/0037-sudoku-solver) |
 | [0039-combination-sum](https://github.com/AdarshShaikh/JAVA-WITH-DSA/tree/master/0039-combination-sum) |
 | [0040-combination-sum-ii](https://github.com/AdarshShaikh/JAVA-WITH-DSA/tree/master/0040-combination-sum-ii) |
+| [0052-n-queens-ii](https://github.com/AdarshShaikh/JAVA-WITH-DSA/tree/master/0052-n-queens-ii) |
 ## Stack
 |  |
 | ------- |
@@ -206,6 +207,7 @@
 |  |
 | ------- |
 | [0037-sudoku-solver](https://github.com/AdarshShaikh/JAVA-WITH-DSA/tree/master/0037-sudoku-solver) |
+| [0052-n-queens-ii](https://github.com/AdarshShaikh/JAVA-WITH-DSA/tree/master/0052-n-queens-ii) |
 ## Dancing Links
 |  |
 | ------- |
